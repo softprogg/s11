@@ -10,7 +10,7 @@ public class Adress implements Serializable{
 @TableGenerator(name="ADRES_GEN")
 @Id
 @GeneratedValue(generator="ADRES_GEN")
-@SequenceGenerator(name="Gen_num")
+ 
 Integer id;
 
 @Column(name = "street")
