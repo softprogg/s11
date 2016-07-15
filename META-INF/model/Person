@@ -31,6 +31,8 @@ Date dateLastAccess;
 @OneToMany(mappedBy="person")
  Map <Order> orders;
   
+  @ElementCollection
+  Collecion <Order> oldOrdes;
   
 
 
