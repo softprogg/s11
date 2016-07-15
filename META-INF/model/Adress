@@ -6,8 +6,10 @@ import java.lang.*;
 @Entity
 public class Adress implements Serializable{
 
+
+@TableGenerator(name="ADRES_GEN")
 @Id
-@GeneratedValue(Generator="Gen_num", Strategy=Sequence)
+@GeneratedValue(generator="ADRES_GEN")
 @SequenceGenerator(name="Gen_num")
 Integer id;
 
