@@ -6,11 +6,12 @@ import java.util.*;
 @Entity
 public class Item implements Serializable{
 
-@GeneratedValue(GeneratedStrategy="Table")
+@GeneratedValue(strategy="Table")
 @Id
 int id;
 
-@ManyToMany(mappedBy="Item")
+@ManyToMany
+@JoinTable(@JoinColumns,@)
 List <Order> orders;
 
 
