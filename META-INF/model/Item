@@ -1,0 +1,17 @@
+package model;
+
+import java.util.*;
+
+
+@Entity
+public class Item implements Serializable{
+
+@GeneratedValue(GeneratedStrategy="Table")
+@Id
+int id;
+
+@ManyToMany(mappedBy="Item")
+List <Order> orders;
+
+
+}
