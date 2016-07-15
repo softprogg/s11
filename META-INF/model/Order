@@ -1,0 +1,25 @@
+package model;
+
+impoer java.util.*;
+
+
+@Entity 
+public class Order implements Serializable{
+
+@GenerateValue(GeneratedStrategy="Sequence")
+@Id
+int id;
+
+@ManyToMany
+@JoinTable(@JoinsColums = @JoinColumn(name="ORDER_ID"), @InverseJoinColumn(name="ITEM_ID")   ) 
+  List <Item> items;
+  
+  
+ @ManyToOne(mappedBy="order") 
+ 
+  Person person;
+
+
+
+
+}
