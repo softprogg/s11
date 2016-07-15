@@ -4,12 +4,19 @@ import java.util.*;
 
 
 @Entity
+@Table(name="Person")
+@Access(AccessType.FIELD)
 public class Person implements Serializable{
 
-@GeneratedValue(GeneratedStrategy="Sequence")
+@GeneratedValue(strategy = GenerationType.AUTO)
 @Id
 int id;
 
+@Transient
+int numOrd;
+
+@Basic(fetch=FetchType.Lazy)
+@Column(name="name")
 String name;
 
 String Surname;
@@ -17,6 +24,9 @@ String Surname;
 @ManyToOne
 @JoinColumn
 Adress adress;
+
+@Temporal(TemporalType.DATE)
+Date dateLastAccess;
 
 @ManyToMany
  @JoinTable( @JoinColumns=@JoinColumn(name="PERSON_ID")
