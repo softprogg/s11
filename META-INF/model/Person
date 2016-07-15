@@ -19,19 +19,17 @@ int numOrd;
 @Column(name="name")
 String name;
 
-String Surname;
+String surname;
 
-@ManyToOne
-@JoinColumn
+@OneToOne
+@JoinColumn(name="adress")
 Adress adress;
 
 @Temporal(TemporalType.DATE)
 Date dateLastAccess;
 
-@ManyToMany
- @JoinTable( @JoinColumns=@JoinColumn(name="PERSON_ID")
-            @inverseJoinColumn = @JoinColumn(name="ORDER_ID"))
-  Map <Order> orders;
+@OneToMany(mappedBy="person")
+ Map <Order> orders;
   
   
 
