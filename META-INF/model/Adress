@@ -20,6 +20,9 @@ Integer id;
  
  Integer postalCode;
  
+ @OneToOne
+ Person person;
+ 
  public void setCity(String city){
  this.city = city;
  }
