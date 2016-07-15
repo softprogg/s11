@@ -11,7 +11,7 @@ public class Order implements Serializable{
 int id;
 
 @ManyToMany
-@JoinTable(@JoinsColums = @JoinColumn(name="ORDER_ID"), @InverseJoinColumn(name="ITEM_ID")   ) 
+@JoinTable(name="ITEM_S", joinsColums = @JoinColumn(name="ORDER_ID"), inverseJoinColumns = @JoinColumn(name="ITEM_ID")   ) 
   List <Item> items;
   
   
