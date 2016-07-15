@@ -15,9 +15,9 @@ int id;
   List <Item> items;
   
   
- @ManyToOne(mappedBy="order") 
- 
-  Person person;
+ @ManyToOne 
+ @JoinColumn(name="person")
+ Person person;
 
 
 
