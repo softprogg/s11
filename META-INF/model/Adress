@@ -20,7 +20,7 @@ Integer id;
  
  Integer postalCode;
  
- @OneToOne
+ @OneToOne(cascade=CascadeType.All)
  Person person;
  
  public void setCity(String city){
