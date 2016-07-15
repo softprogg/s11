@@ -1,0 +1,29 @@
+package model;
+
+import java.util.*;
+
+
+@Entity
+public class Person implements Serializable{
+
+@GeneratedValue(GeneratedStrategy="Sequence")
+@Id
+int id;
+
+String name;
+
+String Surname;
+
+@ManyToOne
+@JoinColumn
+Adress adress;
+
+@ManyToMany
+ @JoinTable( @JoinColumns=@JoinColumn(name="PERSON_ID")
+            @inverseJoinColumn = @JoinColumn(name="ORDER_ID"))
+  Map <Order> orders;
+  
+  
+
+
+}
