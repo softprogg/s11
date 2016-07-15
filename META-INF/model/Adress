@@ -1,6 +1,7 @@
 package model;
 
 import java.util.*;
+import java.lang.*;
 
 @Entity
 public class Adress implements Serializable{
@@ -8,19 +9,37 @@ public class Adress implements Serializable{
 @Id
 @GeneratedValue(Generator="Gen_num", Strategy=Sequence)
 @SequenceGenerator(name="Gen_num")
-int i;
+Integer id;
 
 @Column(name = "street")
- Street street;
+ String street;
  
- City city;
+ String city;
  
- public void setCity(City city){
+ Integer postalCode;
+ 
+ public void setCity(String city){
  this.city = city;
  }
  
  public City getCity(){
  return city;
+ }
+ 
+ public void setCity(String street){
+ this.street = street;
+ }
+ 
+ public City getStreet(){
+ return street;
+ }
+ 
+ public void setCity(String postalCode){
+ this.postalCode = postalCode;
+ }
+ 
+ public City getPostalCode(){
+ return postalCode;
  }
  
  
