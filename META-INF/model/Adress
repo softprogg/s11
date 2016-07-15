@@ -1,0 +1,28 @@
+package model;
+
+import java.util.*;
+
+@Entity
+public class Adress implements Serializable{
+
+@Id
+@GeneratedValue(Generator="Gen_num", Strategy=Sequence)
+@SequenceGenerator(name="Gen_num")
+int i;
+
+@Column(name = "street")
+ Street street;
+ 
+ City city;
+ 
+ public void setCity(City city){
+ this.city = city;
+ }
+ 
+ public City getCity(){
+ return city;
+ }
+ 
+ 
+ 
+}
